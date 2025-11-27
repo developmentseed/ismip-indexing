@@ -96,7 +96,7 @@ def build_file_index(bucket: str = "ismip6",
     print(f"Building file index from gs://{bucket}...")
 
     # Initialize filesystem
-    fs = fsspec.filesystem('gs', anon=True)
+    fs = fsspec.filesystem('gs', storage_options={'token': 'anon'})
 
     # Collect all .nc files with their metadata
     all_files = []
